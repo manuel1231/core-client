@@ -1,0 +1,17 @@
+step "aws-change-ec2-instance-state" {
+    name = "AWS - Change EC2 Instance State"
+    properties = {
+        Octopus.Action.TargetRoles = "core-aws-client-project-targets"
+    }
+
+    action {
+        properties = {
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Template.Id = "ActionTemplates-1"
+            Octopus.Action.Template.Version = "1"
+            odInstanceId = "i-047887b0b30d3a22b"
+            odState = "running"
+        }
+        worker_pool_variable = ""
+    }
+}
