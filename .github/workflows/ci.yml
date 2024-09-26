@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 permissions:
@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   main:
-    runs-on: octopus
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
