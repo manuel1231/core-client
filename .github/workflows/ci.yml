@@ -33,7 +33,7 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - run: ${NODE_AUTH_TOKEN}
+      - run: echo ${NODE_AUTH_TOKEN}
 
       - run: npm ci --legacy-peer-deps
       - uses: nrwl/nx-set-shas@v4
