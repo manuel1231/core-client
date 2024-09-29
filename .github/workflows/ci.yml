@@ -29,8 +29,10 @@ jobs:
       - run: npm ci --legacy-peer-deps
       - uses: nrwl/nx-set-shas@v4
 
+      - name: Build...
       - run: npm run build
 
+      - name: Create Release...
       - run: npm run release
 
       - name: Upload artifacts
