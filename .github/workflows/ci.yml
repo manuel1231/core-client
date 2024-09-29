@@ -38,8 +38,6 @@ jobs:
       - run:  git config --global user.email "manuel.aguilar.rocha"
       - run:  git config --global user.name "manuel1231"
       - run: npm run release
-        env:
-            GITHUB_TOKEN: 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
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
