@@ -41,8 +41,20 @@ jobs:
       - run :  git config --global user.email "manuel.aguilar.rocha@live.com"
       - run :  git config --global user.name "Manuel Aguilar"
 
-      - run: npm run release
-        env: 
+      #- run: npm run release
+      #  env: 
+      #    GITHUB_TOKEN: ${{ github.token }}
+
+      - name: release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          release_name: ${{ steps.version.outputs.version }}
+          tag_name: ${{ github.ref }}
+          body_path: CHANGELOG.md
+        env:
           GITHUB_TOKEN: ${{ github.token }}
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
