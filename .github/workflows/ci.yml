@@ -33,12 +33,14 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - run: echo ${NODE_AUTH_TOKEN}
-
       - run: npm ci --legacy-peer-deps
       - uses: nrwl/nx-set-shas@v4
 
       - run: npm run build
+
+      - run: npm run release
+        env: 
+          GITHUB_TOKEN: ${{ github.token }}
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
