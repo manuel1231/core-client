@@ -9,8 +9,17 @@
     "release": "release-it"
   },
   "release-it": {
+    "non-interactive": true,
+    "npm": false,
+    "hooks": {
+      "before:init": "git pull",
+      "after:bump": "echo module.exports = {version: \"'\"${version}\"'\"} > $(git rev-parse --show-toplevel)/sidekick/VERSION"
+    },
     "git": {
-      "requireCleanWorkingDir": false
+      "commitMessage": "release: v${version}",
+      "tagName": "v${version}",
+      "pushArgs": "-d",
+      "push": false
     }
   },
   "private": true,
