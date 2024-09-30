@@ -1,0 +1,20 @@
+step "check-hostname" {
+    name = "check hostname"
+    properties = {
+        Octopus.Action.TargetRoles = "Web"
+    }
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                hostname
+                hostname -i
+                EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "Bash"
+        }
+        worker_pool_variable = ""
+    }
+}
