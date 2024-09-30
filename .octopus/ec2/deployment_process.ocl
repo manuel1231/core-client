@@ -7,6 +7,8 @@ step "check-hostname" {
     action {
         action_type = "Octopus.Script"
         properties = {
+            Octopus.Action.EnabledFeatures = "Octopus.Features.SelectPowerShellEditionForWindows"
+            Octopus.Action.PowerShell.Edition = "Desktop"
             Octopus.Action.RunOnServer = "false"
             Octopus.Action.Script.ScriptBody = "echo ''"
             Octopus.Action.Script.ScriptSource = "Inline"
