@@ -1,19 +1,14 @@
-step "check-hostname" {
-    name = "check hostname"
+step "run-a-script" {
+    name = "Run a Script"
     properties = {
-        Octopus.Action.TargetRoles = "Web"
+        Octopus.Action.TargetRoles = "ec2-targets"
     }
 
     action {
         action_type = "Octopus.Script"
         properties = {
-            Octopus.Action.EnabledFeatures = "Octopus.Features.SelectPowerShellEditionForWindows"
-            Octopus.Action.PowerShell.Edition = "Desktop"
             Octopus.Action.RunOnServer = "false"
-            Octopus.Action.Script.ScriptBody = <<-EOT
-                hostname
-                hostname -i
-                EOT
+            Octopus.Action.Script.ScriptBody = "echo ''"
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "PowerShell"
         }
