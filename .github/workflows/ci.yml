@@ -55,7 +55,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with: 
-              name: build-artifact
+              name: build-artifact.0.0.11.zip
               path: dist
       
       - name: Install Octopus CLI
