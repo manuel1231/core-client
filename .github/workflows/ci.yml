@@ -71,4 +71,4 @@ jobs:
           OCTOPUS_SPACE: 'Default'
         with:
           packages:
-             build-artifact.zip 
+             dist/build-artifact.zip 
