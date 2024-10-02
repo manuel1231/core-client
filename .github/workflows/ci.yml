@@ -60,7 +60,8 @@ jobs:
       
       - name: Install Octopus CLI
         uses: OctopusDeploy/install-octopus-cli-action@v3
-        with: version: '*'
+        with: 
+              version: '*'
 
       - name: Push a package to Octopus Deploy
         uses: OctopusDeploy/push-package-action@v3
