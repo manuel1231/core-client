@@ -1,7 +1,7 @@
 step "run-a-script" {
     name = "Run a Script"
     properties = {
-        Octopus.Action.TargetRoles = "ec2-targets"
+        Octopus.Action.TargetRoles = "Web"
     }
 
     action {
