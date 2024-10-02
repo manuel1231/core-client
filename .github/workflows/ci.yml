@@ -55,7 +55,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with: 
-              name: build-artifact.0.0.11.zip
+              name: build-artifact.0.0.11
               path: dist
       
       - name: Install Octopus CLI
@@ -66,7 +66,7 @@ jobs:
       - name: Push a package to Octopus Deploy
         uses: OctopusDeploy/push-package-action@v3
         env:
-          OCTOPUS_URL: 'https://maguilar.octopus.app'
+          OCTOPUS_URL: 'https://maguilar.octopus.app/'
           OCTOPUS_API_KEY: 'API-9IU982VHYT7CGZYEDSNHKBKGRSZR1ZF'
           OCTOPUS_SPACE: 'Default'
         with:
