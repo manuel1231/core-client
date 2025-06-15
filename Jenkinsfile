@@ -6,6 +6,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/manuel1231/core-client.git'
+                sh 'npm install'
             }
         }
     }
