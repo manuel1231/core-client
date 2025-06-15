@@ -1,20 +1,12 @@
 pipeline {
     agent any
-
+    tools { nodejs "NodeJS" }
     stages {
-        stage('Build') {
+        stage('Clone Repository') {
             steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                git branch: 'main',
+                    url: 'https://github.com/manuel1231/core-client.git'
+                sh 'npm install'
             }
         }
     }
